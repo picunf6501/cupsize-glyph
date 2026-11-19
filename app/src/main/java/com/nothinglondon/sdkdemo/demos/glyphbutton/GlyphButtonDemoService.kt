@@ -1,3 +1,4 @@
+
 package com.nothinglondon.sdkdemo.demos.glyphbutton
 
 import android.content.Context
@@ -42,7 +43,7 @@ class GlyphButtonDemoService : GlyphMatrixService("CUPSIZE") {
             val textWidth = word.length * 6 - 1
 
             for (offset in 0..(textWidth + 25)) {
-                drawText(25 - offset)
+                drawText(word, 25 - offset)
                 delay(70)
             }
 
@@ -51,14 +52,17 @@ class GlyphButtonDemoService : GlyphMatrixService("CUPSIZE") {
     }
 
     private fun showStaticText() {
-        val textWidth = word.length * 6 - 1
-        drawText((25 - textWidth) / 2)
+        val text = "CUP"
+        val textWidth = text.length * 6 - 1
+        val startX = (25 - textWidth) / 2
+
+        drawText(text, startX)
     }
 
-    private fun drawText(startX: Int) {
+    private fun drawText(text: String, startX: Int) {
         val frame = IntArray(25 * 25)
 
-        word.forEachIndexed { index, letter ->
+        text.forEachIndexed { index, letter ->
             val pattern = font[letter] ?: return@forEachIndexed
 
             pattern.forEachIndexed { y, row ->
