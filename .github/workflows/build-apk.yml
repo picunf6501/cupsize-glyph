@@ -1,4 +1,3 @@
-
 name: Build Android APK
 
 on:
@@ -8,14 +7,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Java
+      - name: Set up Java 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -24,19 +20,14 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.7'
+          gradle-version: '8.11.1'
 
-      - name: Set up Android SDK
-        run: |
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          yes | sdkmanager --licenses || true
-
-      - name: Build debug APK
+      - name: Build Debug APK
         run: gradle :app:assembleDebug --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: cupsize-glyph-apk
+          name: CUPSIZE-Glyph-APK
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
