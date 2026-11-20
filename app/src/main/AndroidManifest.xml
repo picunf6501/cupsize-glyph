@@ -1,8 +1,8 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- This permission is required to be able access the Glyph Matrix -->
     <uses-permission android:name="com.nothing.ketchum.permission.ENABLE" />
 
     <application
@@ -15,7 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NothingAndroidSDKDemo">
 
-        <!-- Nothing API Key -->
         <meta-data
             android:name="NothingKey"
             android:value="test" />
@@ -26,7 +25,6 @@
             android:theme="@style/Theme.NothingAndroidSDKDemo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -36,6 +34,7 @@
             android:name=".demos.basic.BasicDemoService"
             android:exported="true"
             tools:ignore="ExportedService">
+
             <intent-filter>
                 <action android:name="com.nothing.glyph.TOY" />
             </intent-filter>
@@ -43,12 +42,15 @@
             <meta-data
                 android:name="com.nothing.glyph.toy.name"
                 android:resource="@string/toy_name_basic" />
+
             <meta-data
                 android:name="com.nothing.glyph.toy.image"
                 android:resource="@drawable/basic_thumbnail" />
+
             <meta-data
                 android:name="com.nothing.glyph.toy.summary"
                 android:resource="@string/toy_summary_basic" />
+
             <meta-data
                 android:name="com.nothing.glyph.toy.longpress"
                 android:value="1" />
@@ -59,6 +61,7 @@
             android:name=".demos.animation.AnimationDemoService"
             android:exported="true"
             tools:ignore="ExportedService">
+
             <intent-filter>
                 <action android:name="com.nothing.glyph.TOY" />
             </intent-filter>
@@ -66,22 +69,26 @@
             <meta-data
                 android:name="com.nothing.glyph.toy.name"
                 android:resource="@string/toy_name_animation" />
+
             <meta-data
                 android:name="com.nothing.glyph.toy.image"
                 android:resource="@drawable/animation_thumbnail" />
+
             <meta-data
                 android:name="com.nothing.glyph.toy.summary"
                 android:resource="@string/toy_summary_animation" />
+
             <meta-data
                 android:name="com.nothing.glyph.toy.longpress"
                 android:value="1" />
         </service>
 
-        <!-- Glyph Button Demo Service -->
+        <!-- CUPSIZE Glyph Toy with AOD support -->
         <service
             android:name=".demos.glyphbutton.GlyphButtonDemoService"
             android:exported="true"
             tools:ignore="ExportedService">
+
             <intent-filter>
                 <action android:name="com.nothing.glyph.TOY" />
             </intent-filter>
@@ -89,15 +96,23 @@
             <meta-data
                 android:name="com.nothing.glyph.toy.name"
                 android:resource="@string/toy_name_glyph_button" />
+
             <meta-data
                 android:name="com.nothing.glyph.toy.image"
                 android:resource="@drawable/glyphbutton_numbnail" />
+
             <meta-data
                 android:name="com.nothing.glyph.toy.summary"
                 android:resource="@string/toy_summary_glyph_button" />
+
             <meta-data
                 android:name="com.nothing.glyph.toy.longpress"
                 android:value="1" />
+
+            <meta-data
+                android:name="com.nothing.glyph.toy.aod_support"
+                android:value="1" />
+
         </service>
 
     </application>
