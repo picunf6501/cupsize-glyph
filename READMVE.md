@@ -1,95 +1,69 @@
-Glyph Matrix Example Project
-====================
+# Glyph Text
 
-About the Demo
---------------
-This example project contains multiple toy demos:
-- `basic` demo which shows the application icon
-    - `Touch-down` (press down) to increment and display a counter
-    - `Touch-up` (release) to stop incrementing the counter
-- `glyphbutton` demo which shows a randomly populated grid
-    - `Long-press` the `Glyph Button` on the device to generate a new random grid
-- `animation` demo which shows an indefinite animation until the toy is deactivated
+**Custom text for the Nothing Phone (3) Glyph Matrix.**
 
-After going through the `Setup` stage in this document the demo project can be run on the device.
-> Tip: `Short-press` the `Glyph Button` to navigate between the toys.
+Glyph Text is a free, experimental Android app that lets you display personalized text on the Nothing Phone (3) Glyph Matrix.
 
-The demo project already contains the necessary libraries (GlyphMatrix SDK) and source structure as an example. However, if you want to install libraries for your own application, please reference the [**SDK documentation**](https://github.com/KenFeng04/GlyphMatrix-Development-Kit).
+Built using the Nothing Glyph Matrix SDK. No root required.
 
-This demo is written in Kotlin, it also utilize  a useful Kotlin wrapper `GlyphMatrixService.kt`，wrap around the original SDK that you can use in your own project.
+## Features
 
+- **Custom static text** — display up to 3 characters on the Glyph Matrix.
+- **Scrolling messages** — long-press the Glyph Button to scroll a custom message across the matrix.
+- **Always-On Glyph support** — keep your custom text displayed while your phone's screen is off.
+- **Built-in settings** — change your static text and scrolling message directly in the app.
+- **Pixel font** — supports English letters (A–Z), numbers (0–9), spaces and selected punctuation.
+- **No root required.**
 
+## Compatibility
 
-https://github.com/user-attachments/assets/4dbaf7d1-fed0-4a1e-a0eb-38d9cbde046e
+**Tested and confirmed working:**
+- Nothing Phone (3)
 
+Other Nothing devices have not been tested. Compatibility is not guaranteed.
 
+## Installation
 
-Requirements
---------------
-Android Studio, Kotlin, compatible device with Glyph Matrix
+1. Open the [latest release](https://github.com/picunf6501/glyph-text/releases).
+2. Download the APK file from the release assets.
+3. Install the APK on your Nothing Phone (3).
+4. Open Glyph Text and enter your preferred text.
+5. Tap **Save Settings**.
+6. Open your phone's Glyph settings and select the **Glyph Text** toy.
+7. If you change the text later, switch away from the Glyph Toy and select it again to refresh the display.
 
-Setup
------------------------
-**1.** Prepare your Nothing device and connect it to the computer for development
+You may need to allow APK installation from your browser or file manager.
 
-**2.** Clone this project or download this repository as a ZIP and uncompress it to your local directory.
+## How It Works
 
-**3.** Open a new windows in Android studio and hit file on the menu bar, select open.
+### Static Text
 
-<p align="center">
-<img src="images/open.png" alt="Open Project" style="max-height: 300px;">
-</p>
+Enter your preferred text in the first field. The first three characters will be displayed on the Glyph Matrix.
 
-**4.** Select the directory where you have cloned the repository or the unzipped folder and click `Open`
+### Scrolling Text
 
-<p align="center">
-<img src="images/select.png" alt="Select Project" style="max-height: 300px;">
-</p>
+Enter a longer message in the second field. Long-press the Glyph Button to scroll your message across the matrix.
 
-**5.** Once the Gradle files have been synced and your phone is connected properly, you should see your device name shown at the top and a play button. Click the play button to install this example project.
+### Always-On Glyph
 
-<p align="center">
-<img src="images/run.png" alt="Run Project" style="max-height: 300px;">
-</p>
+Glyph Text supports the Always-On Glyph feature on Nothing Phone (3), allowing the text to remain displayed while the screen is off, subject to the phone's Glyph settings and system behavior.
 
-Running a Toy
-------------
-When the example project is installed on the device, toys within the project needs to be acivated before it can be used.
+## Known Limitations
 
-<table>
-<tr>
-<td width="60%" valign="top">
+- Only the first 3 characters are used for the static display.
+- Cyrillic and other non-Latin alphabets are not currently supported.
+- Unsupported characters may appear blank.
+- Settings changes require reselecting the Glyph Toy.
+- Compatibility with other Nothing devices is untested.
 
-**1.** Open the `Glyph Interface` from your device settigns.
+## Version
 
-**2.** Tap on the first button on the right menu to move toys to the enabled state.
+**v1.0.0 — Initial Release**
 
-</td>
-<td width="40%" align="center">
-<img src="images/toy_carousoul.png" alt="Disabled Toys" style="max-height: 300px;">
-</td>
-</tr>
+The first public version of Glyph Text, featuring custom static text, scrolling messages, and Always-On Glyph support.
 
-<tr>
-<td width="60%" valign="top">
+## Disclaimer
 
-**3.** Use the handle bars to drag a toy from `Disabled` to `Active` state.
+Glyph Text is an independent community project and is not affiliated with or endorsed by Nothing Technology Limited.
 
-</td>
-<td width="40%" align="center">
-<img src="images/toy_disable.png" alt="Moving Toys" style="max-height: 300px;">
-</td>
-</tr>
-
-<tr>
-<td width="60%" valign="top">
-
-**4.** The toys should now be in the `Active` state, and can be viewed on the Glyph Matrix using Glyph Touch.
-
-</td>
-<td width="40%" align="center">
-<img src="images/toy_active.png" alt="Active Toys" style="max-height: 300px;">
-</td>
-</tr>
-</table>
-
+Made for the Nothing community.
