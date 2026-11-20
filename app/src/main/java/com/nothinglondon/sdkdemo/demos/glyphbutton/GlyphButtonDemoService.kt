@@ -17,8 +17,8 @@ class GlyphButtonDemoService : GlyphMatrixService("CUPSIZE") {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
     private var animationJob: Job? = null
 
-    private var staticText = "CUP"
-    private var scrollText = "CUPSIZE"
+    private var staticText = "GLY"
+    private var scrollText = "GLYPH TEXT"
 
     private val font = mapOf(
         'A' to arrayOf("01110","10001","10001","11111","10001","10001","10001"),
@@ -79,11 +79,11 @@ class GlyphButtonDemoService : GlyphMatrixService("CUPSIZE") {
         )
 
         staticText = (
-            preferences.getString("static_text", "CUP") ?: "CUP"
+            preferences.getString("static_text", "GLY") ?: "GLY"
         ).uppercase().take(3)
 
         scrollText = (
-            preferences.getString("scroll_text", "CUPSIZE") ?: "CUPSIZE"
+            preferences.getString("scroll_text", "GLYPH TEXT") ?: "GLYPH TEXT"
         ).uppercase()
 
         showStaticText()
