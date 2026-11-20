@@ -31,13 +31,13 @@ class MainActivity : ComponentActivity() {
 
                 var staticText by remember {
                     mutableStateOf(
-                        preferences.getString("static_text", "CUP") ?: "CUP"
+                        preferences.getString("static_text", "GLY") ?: "GLY"
                     )
                 }
 
                 var scrollText by remember {
                     mutableStateOf(
-                        preferences.getString("scroll_text", "CUPSIZE") ?: "CUPSIZE"
+                        preferences.getString("scroll_text", "GLYPH TEXT") ?: "GLYPH TEXT"
                     )
                 }
 
@@ -57,7 +57,7 @@ class MainActivity : ComponentActivity() {
                     ) {
 
                         Text(
-                            text = "CUPSIZE GLYPH",
+                            text = "GLYPH TEXT",
                             style = MaterialTheme.typography.headlineMedium
                         )
 
